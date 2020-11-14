@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Date Matcher</title>
+    </head>
+
+    <body>
+        <h1>Date Matcher</h1>
+
+        <form>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" pattern="[A-Za-z]{3,}" title="Three characters or more. Alphabet only."/>
+            <br><br>
+            <label for="middleInitial">Middle Initial</label>
+            <input type="text" id="middleInitial"/>
+            <br><br>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" pattern="[A-Za-z]{3,}" title="Three characters or more. Alphabet only."/>
+            <br><br>
+            <label for="dob">DOB</label>
+            <input type="date" id="dob" min="1945-01-01" max="2002-01-01" />
+            <br><br>
+            <label>Gender</label>
+            <br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <br><br>
+            <label for="age">Age</label>
+            <input type="number" id="age" min="18" max="75"/>
+            <br><br>
+            <label for="bType">Body Type</label>
+            <select name="cars" id="cars">
+                <option value=""></option>
+                <option disabled value="">Male Body Types</option>
+                <option value="oval">Oval</option>
+                <option value="triangle">Triangle</option>
+                <option value="rectangle">Rectangle</option>
+                <option value="rhomboid">Rhomboid</option>
+                <option value="inverted triangle">Inverted Triangle</option>
+                <option disabled value="">Female Body Types</option>
+                <option value="apple">Apple</option>
+                <option value="pear">Pear</option>
+                <option value="pencil">Pencil</option>
+                <option value="hourglass">Hourglass</option>
+                <option value="round">Round</option>
+            </select>
+            <br><br>
+            <label for="job">Occupation</label>
+            <input type="text" id="job"/>
+            <br><br>
+            <label for="height">Height</label>
+            <input type="number" id="height" min="170" max="200"/>
+            <br><br>
+            <input type="submit"/>
+        </form>
+
+    </body>
+</html>
