@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+    font-size: 48;
+    padding-top: 2%;
+    font-weight: 700;
+}
+
+form {
+    text-align: justify;
+}
+
+label {
+    font-size: 20;
+    font-weight: 400;
+}
+
+#form {
+    flex: 1;
+    flex-direction: row;
+    border: 1%;
+    border-color: black;
+}
+
+#submit {}
