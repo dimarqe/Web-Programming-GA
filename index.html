@@ -6,7 +6,9 @@
     </head>
 
     <body>
-        <h1>Date Matcher</h1>
+        <div id="heading">
+        <h1><i>Date Matcher</i></h1>
+        </div>
 
         <div id="form">
             <form onsubmit="">
@@ -22,15 +24,15 @@
                 <label for="dob">DOB</label>
                 <input type="date" id="dob" onchange="calculateAge()"/>
                 <br><br>
+                <label for="age">Age</label>
+                <input type="text" id="age" readonly/>
+                <br><br>
                 <label>Gender</label>
                 <br>
                 <input type="radio" id="male" name="gender" value="male" onclick="changeBodyTypes()">
                 <label for="male">Male</label>
                 <input type="radio" id="female" name="gender" value="female" onclick="changeBodyTypes()">
                 <label for="female">Female</label>
-                <br><br>
-                <label for="age">Age</label>
-                <input type="text" id="age" readonly/>
                 <br><br>
                 <label for="bType">Body Type</label>
                 <select id="bodyTypes">
@@ -55,9 +57,9 @@
                 <input type="number" id="height" min="170" max="200"/>
                 <br><br>
 
-                <button type="reset" onclick="addNew()">Submit</button>
+                <button type="reset" id="submit" onclick="addNew()">Submit</button>
             </form>
-        <div>
+        </div>
 
         <div id="textAreas">
             <textarea id="showallpersons"></textarea>
