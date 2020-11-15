@@ -29,20 +29,20 @@ function addNew() {
         alert("Please provide your occupation!");
         return false;
     }
-    if (!document.getElementById("height").value) {
+    if (!document.getElementById("height").value || document.getElementById("height").value > 200 || document.getElementById("height").value < 170) {
         alert("Please provide your height!");
         return false;
     }
 
     let newPerson = {
-        firstName: document.getElementById("firstName"),
-        middleInitial: document.getElementById("middleInitial"),
-        lastName: document.getElementById("lastName"),
-        dob: document.getElementById("dob"),
+        firstName: document.getElementById("firstName").value,
+        middleInitial: document.getElementById("middleInitial").value,
+        lastName: document.getElementById("lastName").value,
+        age: document.getElementById("age").value,
         gender: document.querySelector('input[name="gender"]:checked').value,
         bodyType: document.getElementById("bodyTypes").value,
-        occupation: document.getElementById("job"),
-        height: document.getElementById("height")
+        occupation: document.getElementById("job").value,
+        height: document.getElementById("height").value
     }
 
     allPersons.push(newPerson);
@@ -79,29 +79,74 @@ function changeBodyTypes() {
     document.getElementById("bodyTypes").value = null;
 }
 
+function showAll() {
+    document.getElementById("showallpersons").value = "";
+
+    var peopleArr = "";
+    for (var i = 0; i < allPersons.length; i++) {
+        peopleArr += allPersons[i].firstName + ", ";
+        peopleArr += allPersons[i].middleInitial + ", ";
+        peopleArr += allPersons[i].lastName + ", ";
+        peopleArr += allPersons[i].age + ", ";
+        peopleArr += allPersons[i].gender + ", ";
+        peopleArr += allPersons[i].bodyType + ", ";
+        peopleArr += allPersons[i].occupation + ", ";
+        peopleArr += allPersons[i].height + "\n";
+    }
+
+    document.getElementById("showallpersons").value = peopleArr;
+}
+
+function findMatches() {
+    document.getElementById("showmatches").value = "";
+
+    var matches = "";
+    var numAttempts = 10;
+
+    for (var i = 0; i < allPersons.length; i++) {
+        var counter = 0;
+        var flag = 0;
+
+        while (counter < numAttempts) {
+            randomMatch = Math.floor(Math.random() * allPersons.length);
+
+            while (randomMatch == i) {
+                randomMatch = Math.floor(Math.random() * allPersons.length);
+            }
+
+            console.log(randomMatch);
+
+            if (allPersons[randomMatch].height >= allPersons[i].height - 10 && allPersons[randomMatch].height <= allPersons[i].height + 10 &&
+                allPersons[randomMatch].age >= allPersons[i].age - 10 && allPersons[randomMatch].age <= allPersons[i].age + 10 && allPersons[randomMatch].gender != allPersons[i].gender) {
+                matches += allPersons[i].firstName + " matched to " + allPersons[randomMatch].firstName;
+                flag = 1;
+                break;
+            }
+
+            counter++;
+        }
+
+        if (flag == 0) {
+            matches += allPersons[i].firstName + " failed to match\n";
+        }
+    }
+
+    document.getElementById("showmatches").value = matches;
+}
+
 function calculateAge() {
-    var dob = document.getElementById("dob").value;
-    console.log(dob);
-    var birthday = dob.split("-");
+    var dob = document.getElementById('dob').value;
+    var bDay = +new Date(dob);
+    var age = Math.floor(((Date.now() - bDay) / (31557600000)));
 
-    console.log(birthday);
-    birthDate = new Date(year = birthday[2], month = birthday[1], day = birthday[0]);
-    console.log(birthDate);
+    if (age < 18 || age > 75) {
+        alert("Age must be between 18 and 75!");
+        document.getElementById('dob').value = null;
 
-    var currentDate = new Date();
-    console.log(currentDate.getDay());
-    console.log(currentDate.getMonth());
-    console.log(currentDate.getFullYear());
+        return;
+    }
 
-    var result = 1;
-
-    var totalDays = result.toFixed(0);
-
-    var totalYears = totalDays / 365;
-
-    var age = totalYears.toFixed(0);
-
-    console.log(age);
+    document.getElementById("age").innerHTML = age;
 }
 
 function showfreq() {
@@ -199,4 +244,5 @@ function showfreq() {
         document.getElementById('rhomboidBar').style.height = rhomboidCount.floor + 'px';
         document.getElementById('iTriangleBar').style.height = iTriangleCount.floor + 'px';
     }
+
 }

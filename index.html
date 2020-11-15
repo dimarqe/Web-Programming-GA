@@ -20,7 +20,7 @@
                 <input type="text" id="lastName" pattern="[A-Za-z]{3,}" title="Three characters or more. Alphabet only."/>
                 <br><br>
                 <label for="dob">DOB</label>
-                <input type="date" id="dob" min="1945-01-01" max="2002-01-01" />
+                <input type="date" id="dob" onchange="calculateAge()"/>
                 <br><br>
                 <label>Gender</label>
                 <br>
@@ -30,7 +30,7 @@
                 <label for="female">Female</label>
                 <br><br>
                 <label for="age">Age</label>
-                <input type="number" id="age" min="18" max="75"/>
+                <input type="number" id="age" readonly/>
                 <br><br>
                 <label for="bType">Body Type</label>
                 <select id="bodyTypes">
@@ -60,6 +60,8 @@
 
         <div id="textAreas">
             <textarea id="showallpersons"></textarea>
+            <br><br>
+            <button onclick="findMatches()">Show matches</button>
             <br><br>
             <textarea id="showmatches"></textarea>
         </div>
