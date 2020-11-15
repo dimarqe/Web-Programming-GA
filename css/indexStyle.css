@@ -1,8 +1,24 @@
 h1 {
     text-align: center;
-    font-size: 48;
+    font-size: 60;
     padding-top: 2%;
     font-weight: 700;
+}
+
+body {
+    background-color: rgb(217, 249, 255);
+}
+
+input {
+    background-color: rgb(217, 249, 255);
+}
+
+select {
+    background-color: rgb(217, 249, 255);
+}
+
+textarea {
+    background-color: rgb(217, 249, 255);
 }
 
 form {
@@ -14,10 +30,60 @@ label {
     font-weight: 400;
 }
 
-form {
+#heading {
+    background-color: rgb(162, 150, 228);
+    margin: auto;
+    padding-bottom: 1%;
+}
+
+#form {
+    background-color: rgb(162, 150, 228);
     flex: 1;
     flex-direction: row;
     border: 2px solid black;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+}
+
+#textAreas {
+    background-color: rgb(162, 150, 228);
+    flex: 1;
+    flex-direction: row;
+    border: 2px solid black;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+}
+
+textarea {
+    width: 95%;
+    height: 15%;
+}
+
+#showCharts {
+    background-color: rgb(162, 150, 228);
+    flex: 1;
+    flex-direction: row;
+    border: 2px solid black;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+}
+
+#barChart {
+    background-color: rgb(217, 249, 255);
+    border: 2px solid black;
+}
+
+button {
+    background-color: rgb(217, 249, 255);
 }
 
 select option[disabled] {
