@@ -21,4 +21,8 @@ label {
     border-color: black;
 }
 
+select option[disabled] {
+    display: none;
+}
+
 #submit {}
