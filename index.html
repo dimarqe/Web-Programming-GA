@@ -1,67 +1,4 @@
 <html>
-<<<<<<< HEAD
-    <head>
-        <link rel="stylesheet" href="./css/indexStyle.css"></link>
-        <script type="text/javascript" src="./javascript/indexScript.js"></script>
-        <title>Date Matcher</title>
-    </head>
-
-    <body>
-        <div id="heading">
-        <h1><i>Date Matcher</i></h1>
-        </div>
-
-        <div id="form">
-            <form onsubmit="">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" pattern="[A-Za-z]{3,}" title="Three characters or more. Alphabet only."/>
-                <br><br>
-                <label for="middleInitial">Middle Initial</label>
-                <input type="text" id="middleInitial"/>
-                <br><br>
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" pattern="[A-Za-z]{3,}" title="Three characters or more. Alphabet only."/>
-                <br><br>
-                <label for="dob">DOB</label>
-                <input type="date" id="dob" onchange="calculateAge()"/>
-                <br><br>
-                <label for="age">Age</label>
-                <input type="text" id="age" readonly/>
-                <br><br>
-                <label>Gender</label>
-                <br>
-                <input type="radio" id="male" name="gender" value="male" onclick="changeBodyTypes()">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female" onclick="changeBodyTypes()">
-                <label for="female">Female</label>
-                <br><br>
-                <label for="bType">Body Type</label>
-                <select id="bodyTypes">
-                    <option value="" selected disabled hidden>Select gender</option>
-                    <option value="oval" disabled>Oval</option>
-                    <option value="triangle" disabled>Triangle</option>
-                    <option value="rectangle" disabled>Rectangle</option>
-                    <option value="rhomboid" disabled>Rhomboid</option>
-                    <option value="inverted triangle" disabled>Inverted Triangle</option>
-                    
-                    <option value="apple" disabled>Apple</option>
-                    <option value="pear" disabled>Pear</option>
-                    <option value="pencil" disabled>Pencil</option>
-                    <option value="hourglass" disabled>Hourglass</option>
-                    <option value="round" disabled>Round</option>
-                </select>
-                <br><br>
-                <label for="job">Occupation</label>
-                <input type="text" id="job"/>
-                <br><br>
-                <label for="height">Height</label>
-                <input type="number" id="height" min="170" max="200"/>
-                <br><br>
-
-                <button type="reset" id="submit" onclick="addNew()">Submit</button>
-            </form>
-        </div>
-=======
 
 <head>
     <link rel="stylesheet" href="./css/indexStyle.css">
@@ -69,7 +6,6 @@
     <script type="text/javascript" src="./javascript/indexScript.js"></script>
     <title>Date Matcher</title>
 </head>
->>>>>>> c2eb0b4d8e2a955651ac7f1f853ac6bb1195a534
 
 <body>
     <h1>Date Matcher</h1>
