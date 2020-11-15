@@ -35,26 +35,20 @@ function addNew() {
     }
 
     let newPerson = {
-        firstName: document.getElementById("firstName"),
-        middleInitial: document.getElementById("middleInitial"),
-        lastName: document.getElementById("lastName"),
-        dob: document.getElementById("dob"),
+        firstName: document.getElementById("firstName").value,
+        middleInitial: document.getElementById("middleInitial").value,
+        lastName: document.getElementById("lastName").value,
+        dob: document.getElementById("dob").value,
         gender: document.querySelector('input[name="gender"]:checked').value,
         bodyType: document.getElementById("bodyTypes").value,
-        occupation: document.getElementById("job"),
-        height: document.getElementById("height")
+        occupation: document.getElementById("job").value,
+        height: document.getElementById("height").value
     }
 
     allPersons.push(newPerson);
     showAll();
 
     return false;
-}
-
-function showAll() {
-    for(var i=0; i < allPersons.length; i++){
-        console.log(allPersons[i]);
-    }
 }
 
 function changeBodyTypes() {
@@ -79,6 +73,53 @@ function changeBodyTypes() {
     }
 
     document.getElementById("bodyTypes").value = null;
+}
+
+function showAll() {
+    document.getElementById("showallpersons").value = "";
+
+    var peopleArr = "";
+    for (var i = 0; i < allPersons.length; i++) {
+        peopleArr += allPersons[i].firstName + ", ";
+        peopleArr += allPersons[i].middleInitial + ", ";
+        peopleArr += allPersons[i].lastName + ", ";
+        peopleArr += allPersons[i].dob + ", ";
+        peopleArr += allPersons[i].gender + ", ";
+        peopleArr += allPersons[i].bodyType + ", ";
+        peopleArr += allPersons[i].occupation + ", ";
+        peopleArr += allPersons[i].height + "\n";
+    }
+
+    document.getElementById("showallpersons").value = peopleArr;
+}
+
+function findMatches() {
+    document.getElementById("showmatches").value = "";
+
+    var matches = {};
+    numAttempts = 10;
+
+    // if (allPersons.length <= 10) {
+    //     numAttempts = allPersons.length - 1;
+    // }
+
+    for (var i = 0; i < allPersons.length; i++) {
+        searching = allPersons[i];
+        counter = 0;
+
+        while (counter < numAttempts) {
+            randomMatch = Math.floor(Math.random() * allPersons.length);
+            while(randomMatch == i){
+                randomMatch = Math.floor(Math.random() * allPersons.length);
+            }
+            
+            if(allPersons[randomMatch].height >= allPersons[i].height && allPersons[randomMatch].height <= allPersons[i].height){
+                console.log(allPersons[randomMatch].name+"++"+allPersons[i].name+"\n");
+            }
+
+            counter++;
+        }
+    }
 }
 
 function calculateAge() {
