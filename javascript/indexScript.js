@@ -142,5 +142,6 @@ function calculateAge() {
         return;
     }
 
+    console.log(age);
     document.getElementById("age").innerHTML = age;
 }
