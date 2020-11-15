@@ -44,6 +44,118 @@ select option[disabled] {
     position: absolute;
 }
 
+#lessThanBar {
+    background-color: blue;
+    width: 50px;
+    height: 40px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#twentyBar {
+    background-color: red;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#fortyBar {
+    background-color: purple;
+    width: 50px;
+    height: 0px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#greaterThanBar {
+    background-color: green;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#appleBar {
+    background-color: red;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#pearBar {
+    background-color: blue;
+    width: 50px;
+    height: 40px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#pencilBar {
+    background-color: red;
+    width: 50px;
+    height: 20px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#hourglassBar {
+    background-color: purple;
+    width: 50px;
+    height: 40px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#roundBar {
+    background-color: green;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#ovalBar {
+    background-color: red;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#triangleBar {
+    background-color: blue;
+    width: 50px;
+    height: 40px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#rectangleBar {
+    background-color: red;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#rhomboidBar {
+    background-color: purple;
+    width: 50px;
+    height: 10px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#iTriangleBar {
+    background-color: green;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+}
+
 .bar {
     display: flex;
     flex-direction: column-reverse;
@@ -54,13 +166,23 @@ select option[disabled] {
     padding-bottom: 45px;
 }
 
-#genderTable {
+#barChart {
     display: flex;
     flex-direction: column;
 }
 
 #genderTableTitle {
     width: 15%;
+    text-align: center;
+}
+
+#ageTableTitle {
+    width: 25%;
+    text-align: center;
+}
+
+#bTypeTableTitle {
+    width: 55%;
     text-align: center;
 }
 
