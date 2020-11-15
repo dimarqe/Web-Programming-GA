@@ -24,5 +24,3 @@ label {
 select option[disabled] {
     display: none;
 }
-
-#submit {}
