@@ -147,7 +147,7 @@ function calculateAge() {
     }
 
     console.log(age);
-    document.getElementById("age").innerHTML = age;
+    document.getElementById("age").value = age;
 }
 
 function showfreq() {
@@ -170,6 +170,7 @@ function showfreq() {
         rhomboidCount = 0,
         iTriangleCount = 0;
 
+    console.log('loop');
     for (var i = 0; i < totalPersons; i++) {
         if (allPersons[i].gender == "male") {
             maleCount = maleCount + 1;
@@ -194,7 +195,7 @@ function showfreq() {
         } else if (allPersons[i].bodyType == "pencil") {
             pencilCount = pencilCount + 1;
         } else if (allPersons[i].bodyType == "hourglass") {
-            hourglassCount = hourglassCount + 1;
+
         } else if (allPersons[i].bodyType == "round") {
             roundCount = roundCount + 1;
         } else if (allPersons[i].bodyType == "oval") {
@@ -226,24 +227,24 @@ function showfreq() {
         rhomboidCount = rhomboidCount / totalPersons * 100;
         iTriangleCount = iTriangleCount / totalPersons * 100;
 
-        document.getElementById('maleBar').style.height = maleCount.floor + 'px';
-        document.getElementById('femaleBar').style.height = femaleCount.floor + 'px';
+        document.getElementById('maleBar').style.height = Math.floor(maleCount) + 'px';
+        document.getElementById('femaleBar').style.height = Math.floor(femaleCount) + 'px';
 
-        document.getElementById('lessThanBar').style.height = lessThanCount.floor + 'px';
-        document.getElementById('twentyBar').style.height = twentyCount.floor + 'px';
-        document.getElementById('fortyBar').style.height = fortyCount.floor + 'px';
-        document.getElementById('greaterThanBar').style.height = greaterThanCount.floor + 'px';
+        document.getElementById('lessThanBar').style.height = Math.floor(lessThanCount) + 'px';
+        document.getElementById('twentyBar').style.height = Math.floor(twentyCount) + 'px';
+        document.getElementById('fortyBar').style.height = Math.floor(fortyCount) + 'px';
+        document.getElementById('greaterThanBar').style.height = Math.floor(greaterThanCount) + 'px';
 
-        document.getElementById('appleBar').style.height = appleCount.floor + 'px';
-        document.getElementById('pearBar').style.height = pearCount.floor + 'px';
-        document.getElementById('pencilBar').style.height = pencilCount.floor + 'px';
-        document.getElementById('hourglassBar').style.height = hourglassCount.floor + 'px';
-        document.getElementById('roundBar').style.height = roundCount.floor + 'px';
-        document.getElementById('ovalBar').style.height = ovalCount.floor + 'px';
-        document.getElementById('triangleBar').style.height = triangleCount.floor + 'px';
-        document.getElementById('rectangleBar').style.height = rectangleCount.floor + 'px';
-        document.getElementById('rhomboidBar').style.height = rhomboidCount.floor + 'px';
-        document.getElementById('iTriangleBar').style.height = iTriangleCount.floor + 'px';
+        document.getElementById('appleBar').style.height = Math.floor(appleCount) + 'px';
+        document.getElementById('pearBar').style.height = Math.floor(pearCount) + 'px';
+        document.getElementById('pencilBar').style.height = Math.floor(pencilCount) + 'px';
+        document.getElementById('hourglassBar').style.height = Math.floor(hourglassCount) + 'px';
+        document.getElementById('roundBar').style.height = Math.floor(roundCount) + 'px';
+        document.getElementById('ovalBar').style.height = Math.floor(ovalCount) + 'px';
+        document.getElementById('triangleBar').style.height = Math.floor(triangleCount) + 'px';
+        document.getElementById('rectangleBar').style.height = Math.floor(rectangleCount) + 'px';
+        document.getElementById('rhomboidBar').style.height = Math.floor(rhomboidCount) + 'px';
+        document.getElementById('iTriangleBar').style.height = Math.floor(iTriangleCount) + 'px';
     }
 
 }
