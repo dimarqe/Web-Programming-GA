@@ -29,7 +29,7 @@ function addNew() {
         alert("Please provide your occupation!");
         return false;
     }
-    if (!document.getElementById("height").value) {
+    if (!document.getElementById("height").value || document.getElementById("height").value > 200 || document.getElementById("height").value < 170) {
         alert("Please provide your height!");
         return false;
     }
@@ -38,7 +38,7 @@ function addNew() {
         firstName: document.getElementById("firstName").value,
         middleInitial: document.getElementById("middleInitial").value,
         lastName: document.getElementById("lastName").value,
-        dob: document.getElementById("dob").value,
+        age: document.getElementById("age").value,
         gender: document.querySelector('input[name="gender"]:checked').value,
         bodyType: document.getElementById("bodyTypes").value,
         occupation: document.getElementById("job").value,
@@ -83,7 +83,7 @@ function showAll() {
         peopleArr += allPersons[i].firstName + ", ";
         peopleArr += allPersons[i].middleInitial + ", ";
         peopleArr += allPersons[i].lastName + ", ";
-        peopleArr += allPersons[i].dob + ", ";
+        peopleArr += allPersons[i].age + ", ";
         peopleArr += allPersons[i].gender + ", ";
         peopleArr += allPersons[i].bodyType + ", ";
         peopleArr += allPersons[i].occupation + ", ";
@@ -113,7 +113,7 @@ function findMatches() {
             console.log(randomMatch);
 
             if (allPersons[randomMatch].height >= allPersons[i].height - 10 && allPersons[randomMatch].height <= allPersons[i].height + 10
-                && allPersons[randomMatch].gender != allPersons[i].gender) {
+                && allPersons[randomMatch].age >= allPersons[i].age - 10 && allPersons[randomMatch].age <= allPersons[i].age + 10  && allPersons[randomMatch].gender != allPersons[i].gender) {
                 matches += allPersons[i].firstName + " matched to " + allPersons[randomMatch].firstName;
                 flag = 1;
                 break;
@@ -125,14 +125,22 @@ function findMatches() {
         if (flag == 0) {
             matches += allPersons[i].firstName + " failed to match\n";
         }
-        else {
-
-        }
     }
+
+    document.getElementById("showmatches").value = matches;
 }
 
 function calculateAge() {
-    var dob = document.getElementById("dob").value;
-    var currentDate = Date.getTime();
+    var dob = document.getElementById('dob').value;
+    var bDay = +new Date(dob);
+    var age = Math.floor(((Date.now() - bDay) / (31557600000)));
 
+    if (age < 18 || age > 75) {
+        alert("Age must be between 18 and 75!");
+        document.getElementById('dob').value = null;
+
+        return;
+    }
+
+    document.getElementById("age").innerHTML = age;
 }
