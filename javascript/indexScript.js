@@ -96,28 +96,37 @@ function showAll() {
 function findMatches() {
     document.getElementById("showmatches").value = "";
 
-    var matches = {};
-    numAttempts = 10;
-
-    // if (allPersons.length <= 10) {
-    //     numAttempts = allPersons.length - 1;
-    // }
+    var matches = "";
+    var numAttempts = 10;
 
     for (var i = 0; i < allPersons.length; i++) {
-        searching = allPersons[i];
-        counter = 0;
+        var counter = 0;
+        var flag = 0;
 
         while (counter < numAttempts) {
             randomMatch = Math.floor(Math.random() * allPersons.length);
-            while(randomMatch == i){
+
+            while (randomMatch == i) {
                 randomMatch = Math.floor(Math.random() * allPersons.length);
             }
-            
-            if(allPersons[randomMatch].height >= allPersons[i].height && allPersons[randomMatch].height <= allPersons[i].height){
-                console.log(allPersons[randomMatch].name+"++"+allPersons[i].name+"\n");
+
+            console.log(randomMatch);
+
+            if (allPersons[randomMatch].height >= allPersons[i].height - 10 && allPersons[randomMatch].height <= allPersons[i].height + 10
+                && allPersons[randomMatch].gender != allPersons[i].gender) {
+                matches += allPersons[i].firstName + " matched to " + allPersons[randomMatch].firstName;
+                flag = 1;
+                break;
             }
 
             counter++;
+        }
+
+        if (flag == 0) {
+            matches += allPersons[i].firstName + " failed to match\n";
+        }
+        else {
+
         }
     }
 }
