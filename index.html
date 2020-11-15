@@ -1,4 +1,5 @@
 <html>
+<<<<<<< HEAD
     <head>
         <link rel="stylesheet" href="./css/indexStyle.css"></link>
         <script type="text/javascript" src="./javascript/indexScript.js"></script>
@@ -60,92 +61,209 @@
                 <button type="reset" id="submit" onclick="addNew()">Submit</button>
             </form>
         </div>
+=======
 
-        <div id="textAreas">
-            <textarea id="showallpersons"></textarea>
+<head>
+    <link rel="stylesheet" href="./css/indexStyle.css">
+    </link>
+    <script type="text/javascript" src="./javascript/indexScript.js"></script>
+    <title>Date Matcher</title>
+</head>
+>>>>>>> c2eb0b4d8e2a955651ac7f1f853ac6bb1195a534
+
+<body>
+    <h1>Date Matcher</h1>
+    <script>
+        setInterval(function () {
+            showfreq();
+        }, 5000);
+    </script>
+    <div id="form">
+        <form onsubmit="">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" pattern="[A-Za-z]{3,}" title="Three characters or more. Alphabet only." />
             <br><br>
-            <button onclick="findMatches()">Show matches</button>
-            <button onclick="showfreq()">Fyciksad</button>
+            <label for="middleInitial">Middle Initial</label>
+            <input type="text" id="middleInitial" />
             <br><br>
-            <textarea id="showmatches"></textarea>
-        </div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" pattern="[A-Za-z]{3,}" title="Three characters or more. Alphabet only." />
+            <br><br>
+            <label for="dob">DOB</label>
+            <input type="date" id="dob" onchange="calculateAge()" />
+            <br><br>
+            <label>Gender</label>
+            <br>
+            <input type="radio" id="male" name="gender" value="male" onclick="changeBodyTypes()">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" onclick="changeBodyTypes()">
+            <label for="female">Female</label>
+            <br><br>
+            <label for="age">Age</label>
+            <input type="text" id="age" readonly />
+            <br><br>
+            <label for="bType">Body Type</label>
+            <select id="bodyTypes">
+                <option value="" selected disabled hidden>Select gender</option>
+                <option value="oval" disabled>Oval</option>
+                <option value="triangle" disabled>Triangle</option>
+                <option value="rectangle" disabled>Rectangle</option>
+                <option value="rhomboid" disabled>Rhomboid</option>
+                <option value="inverted triangle" disabled>Inverted Triangle</option>
 
-        <br><br>
+                <option value="apple" disabled>Apple</option>
+                <option value="pear" disabled>Pear</option>
+                <option value="pencil" disabled>Pencil</option>
+                <option value="hourglass" disabled>Hourglass</option>
+                <option value="round" disabled>Round</option>
+            </select>
+            <br><br>
+            <label for="job">Occupation</label>
+            <input type="text" id="job" />
+            <br><br>
+            <label for="height">Height</label>
+            <input type="number" id="height" min="170" max="200" />
+            <br><br>
 
-        <div id="showcharts">
+            <button type="reset" onclick="addNew()">Submit</button>
+        </form>
+        <div>
 
-            <div id="barChart">
-                <div id="genderTableTitle">Gender Frequency Bar Graph</div>
-                <br>
-                <div id="bars">
-                    <div id="percentage">50%</div>
-                    <div class="bar"><div></div><div id="maleBar"></div></div>
-                    <div class="bar"><div></div><div id="femaleBar"></div></div>
-                </div>
-                <div id="barNames">
-                    <div>0%</div>
-                    <div>Male</div>
-                    <div>Female</div>
-                </div>
+            <div id="textAreas">
+                <textarea id="showallpersons"></textarea>
+                <br><br>
+                <button onclick="findMatches()">Show matches</button>
+                <button onclick="showfreq()">Fyciksad</button>
+                <br><br>
+                <textarea id="showmatches"></textarea>
             </div>
 
             <br><br>
 
-            <div id="barChart">
-                <div id="ageTableTitle">Age Frequency Bar Graph</div>
-                <br>
-                <div id="bars">
-                    <div id="percentage">50%</div>
-                    <div class="bar"><div></div><div id="lessThanBar"></div></div>
-                    <div class="bar"><div></div><div id="twentyBar"></div></div>
-                    <div class="bar"><div></div><div id="fortyBar"></div></div>
-                    <div class="bar"><div></div><div id="greaterThanBar"></div></div>
+            <div id="showcharts">
+
+                <div id="barChart">
+                    <div id="genderTableTitle">Gender Frequency Bar Graph</div>
+                    <br>
+                    <div id="bars">
+                        <div id="percentage">50%</div>
+                        <div class="bar">
+                            <div></div>
+                            <div id="maleBar"></div>
+                        </div>
+                        <div class="bar">
+                            <div></div>
+                            <div id="femaleBar"></div>
+                        </div>
+                    </div>
+                    <div id="barNames">
+                        <div>0%</div>
+                        <div>Male</div>
+                        <div>Female</div>
+                    </div>
                 </div>
-                <div id="barNames">
-                    <div>0%</div>
-                    <div><20</div>
-                    <div>20 to 39</div>
-                    <div>40 to 69</div>
-                    <div>>69</div>
+
+                <br><br>
+
+                <div id="barChart">
+                    <div id="ageTableTitle">Age Frequency Bar Graph</div>
+                    <br>
+                    <div id="bars">
+                        <div id="percentage">50%</div>
+                        <div class="bar">
+                            <div></div>
+                            <div id="lessThanBar"></div>
+                        </div>
+                        <div class="bar">
+                            <div></div>
+                            <div id="twentyBar"></div>
+                        </div>
+                        <div class="bar">
+                            <div></div>
+                            <div id="fortyBar"></div>
+                        </div>
+                        <div class="bar">
+                            <div></div>
+                            <div id="greaterThanBar"></div>
+                        </div>
+                    </div>
+                    <div id="barNames">
+                        <div>0%</div>
+                        <div>
+                            <20< /div>
+                                <div>20 to 39</div>
+                                <div>40 to 69</div>
+                                <div>>69</div>
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div id="barChart">
+                        <div id="bTypeTableTitle">Body Type Frequency Bar Graph</div>
+                        <br>
+                        <div id="bars">
+                            <div id="percentage">50%</div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="appleBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="pearBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="pencilBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="hourglassBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="roundBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="ovalBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="triangleBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="rectangleBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="rhomboidBar"></div>
+                            </div>
+                            <div class="bar">
+                                <div></div>
+                                <div id="iTriangleBar"></div>
+                            </div>
+                        </div>
+                        <div id="barNames">
+                            <div>0%</div>
+                            <div>Apple</div>
+                            <div>Pear</div>
+                            <div>Pencil</div>
+                            <div>Hourglass</div>
+                            <div>Round</div>
+                            <div>Oval</div>
+                            <div>Triangle</div>
+                            <div>Rectangle</div>
+                            <div>Rhomboid</div>
+                            <div>Inverted Triangle</div>
+                        </div>
+                    </div>
+
+                    <br><br>
+
                 </div>
-            </div>
 
-            <br><br>
+</body>
 
-            <div id="barChart">
-                <div id="bTypeTableTitle">Body Type Frequency Bar Graph</div>
-                <br>
-                <div id="bars">
-                    <div id="percentage">50%</div>
-                    <div class="bar"><div></div><div id="appleBar"></div></div>
-                    <div class="bar"><div></div><div id="pearBar"></div></div>
-                    <div class="bar"><div></div><div id="pencilBar"></div></div>
-                    <div class="bar"><div></div><div id="hourglassBar"></div></div>
-                    <div class="bar"><div></div><div id="roundBar"></div></div>
-                    <div class="bar"><div></div><div id="ovalBar"></div></div>
-                    <div class="bar"><div></div><div id="triangleBar"></div></div>
-                    <div class="bar"><div></div><div id="rectangleBar"></div></div>
-                    <div class="bar"><div></div><div id="rhomboidBar"></div></div>
-                    <div class="bar"><div></div><div id="iTriangleBar"></div></div>
-                </div>
-                <div id="barNames">
-                    <div>0%</div>
-                    <div>Apple</div>
-                    <div>Pear</div>
-                    <div>Pencil</div>
-                    <div>Hourglass</div>
-                    <div>Round</div>
-                    <div>Oval</div>
-                    <div>Triangle</div>
-                    <div>Rectangle</div>
-                    <div>Rhomboid</div>
-                    <div>Inverted Triangle</div>
-                </div>
-            </div>
-
-            <br><br>
-
-        </div>
-
-    </body>
 </html>

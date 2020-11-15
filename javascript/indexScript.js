@@ -146,11 +146,11 @@ function calculateAge() {
         return;
     }
 
-    console.log(age);
     document.getElementById("age").value = age;
 }
 
 function showfreq() {
+    console.log("..called");
     var totalPersons = allPersons.length;
 
     var maleCount = 0,
@@ -170,7 +170,6 @@ function showfreq() {
         rhomboidCount = 0,
         iTriangleCount = 0;
 
-    console.log('loop');
     for (var i = 0; i < totalPersons; i++) {
         if (allPersons[i].gender == "male") {
             maleCount = maleCount + 1;
