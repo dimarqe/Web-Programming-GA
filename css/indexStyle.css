@@ -14,15 +14,70 @@ label {
     font-weight: 400;
 }
 
-#form {
+form {
     flex: 1;
     flex-direction: row;
-    border: 1%;
-    border-color: black;
+    border: 2px solid black;
 }
 
 select option[disabled] {
     display: none;
 }
 
-#submit {}
+#genderBar {
+    width: 15%;
+}
+
+#maleBar {
+    background-color: blue;
+    width: 50px;
+    height: 70px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+#femaleBar {
+    background-color: red;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    position: absolute;
+}
+
+.bar {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#percentage {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+#genderTable {
+    display: flex;
+    flex-direction: column;
+}
+
+#genderTableTitle {
+    width: 15%;
+    text-align: center;
+}
+
+#bars {
+    display: flex;
+    flex-direction: row;
+}
+
+#bars>div {
+    width: 5%;
+}
+
+#barNames {
+    display: flex;
+    flex-direction: row;
+}
+
+#barNames>div {
+    width: 5%;
+}
